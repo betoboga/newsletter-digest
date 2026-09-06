@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+
+const resumenes = (await getCollection('resumenes')).sort(
+  (a, b) => b.data.fecha.getTime() - a.data.fecha.getTime()
+);
+
+const formatoFecha = new Intl.DateTimeFormat('es-ES', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+});
+---
+<Base titulo="Inicio">
+  <header class="site">
+    <h1>Newsletter Digest</h1>
+    <p>Lo mejor de las newsletters de Alberto, cada semana: frases, ideas y apuntes que merecen quedarse.</p>
+  </header>
+  <ul class="resumenes">
+    {resumenes.map((r) => (
+      <li>
+        <a href={`/resumen/${r.id}/`}>{r.data.titulo}</a>
+        <p class="fecha">{formatoFecha.format(r.data.fecha)} · Semana del {r.data.semana}</p>
+      </li>
+    ))}
+  </ul>
+</Base>
