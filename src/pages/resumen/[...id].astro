@@ -20,10 +20,13 @@ const formatoFecha = new Intl.DateTimeFormat('es-ES', {
 });
 ---
 <Base titulo={r.data.titulo}>
-  <p><a href="/">&larr; Todos los resúmenes</a></p>
+  <p class="volver"><a href="/">&larr; Todos los resúmenes</a></p>
   <article>
-    <h1>{r.data.titulo}</h1>
-    <p class="fecha">{formatoFecha.format(r.data.fecha)} · Semana del {r.data.semana}</p>
+    <header class="cabecera">
+      <p class="semana">Semana del {r.data.semana}</p>
+      <h1>{r.data.titulo}</h1>
+      <p class="fecha">{formatoFecha.format(r.data.fecha)}</p>
+    </header>
     <Content />
   </article>
 </Base>

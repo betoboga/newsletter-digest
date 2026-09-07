@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css';
+
 interface Props {
   titulo: string;
 }
@@ -10,60 +12,22 @@ const { titulo } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Lo mejor de las newsletters de Alberto, cada semana." />
+    <meta name="theme-color" content="#f7f4ed" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23b3541e'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='36' font-style='italic' fill='%23f7f4ed' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&display=swap"
+      rel="stylesheet"
+    />
     <title>{titulo} · Newsletter Digest</title>
-    <style>
-      :root {
-        --texto: #1c1c1e;
-        --gris: #6b6b70;
-        --acento: #b3541e;
-        --fondo: #faf9f6;
-      }
-      * { box-sizing: border-box; }
-      body {
-        margin: 0;
-        font-family: ui-serif, Georgia, 'Times New Roman', serif;
-        background: var(--fondo);
-        color: var(--texto);
-        line-height: 1.7;
-      }
-      main {
-        max-width: 42rem;
-        margin: 0 auto;
-        padding: 3rem 1.25rem 5rem;
-      }
-      a { color: var(--acento); }
-      header.site {
-        border-bottom: 1px solid #e6e2da;
-        margin-bottom: 2.5rem;
-        padding-bottom: 1.5rem;
-      }
-      header.site h1 { margin: 0; font-size: 1.9rem; }
-      header.site p { margin: 0.35rem 0 0; color: var(--gris); font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.95rem; }
-      blockquote {
-        margin: 1.5rem 0;
-        padding: 0.25rem 0 0.25rem 1.25rem;
-        border-left: 3px solid var(--acento);
-        font-size: 1.15rem;
-        font-style: italic;
-      }
-      blockquote p { margin: 0; }
-      .fuente {
-        color: var(--gris);
-        font-family: ui-sans-serif, system-ui, sans-serif;
-        font-size: 0.85rem;
-        font-style: normal;
-      }
-      .fecha { color: var(--gris); font-family: ui-sans-serif, system-ui, sans-serif; font-size: 0.9rem; }
-      h2 { margin-top: 2.5rem; }
-      ul.resumenes { list-style: none; padding: 0; }
-      ul.resumenes li { margin-bottom: 1.75rem; }
-      ul.resumenes a { text-decoration: none; font-size: 1.15rem; font-weight: 600; }
-      ul.resumenes a:hover { text-decoration: underline; }
-    </style>
   </head>
   <body>
     <main>
       <slot />
     </main>
+    <footer class="site">
+      <p>Newsletter Digest · Un resumen cada domingo</p>
+    </footer>
   </body>
 </html>

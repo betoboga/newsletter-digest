@@ -8,6 +8,7 @@ Cada domingo se publica un nuevo resumen con lo más interesante de la semana.
 
 - [Astro](https://astro.build) (sitio estático, sin framework de UI)
 - Contenido en Markdown con [content collections](https://docs.astro.build/en/guides/content-collections/)
+- Tipografía editorial: [Fraunces](https://fonts.google.com/specimen/Fraunces) (titulares) y [Newsreader](https://fonts.google.com/specimen/Newsreader) (texto), vía Google Fonts
 
 ## Estructura
 
@@ -15,7 +16,8 @@ Cada domingo se publica un nuevo resumen con lo más interesante de la semana.
 src/
   content.config.ts        # definición de la colección "resumenes"
   content/resumenes/       # un archivo .md por semana (el contenido de la web)
-  layouts/Base.astro       # layout y estilos
+  layouts/Base.astro       # layout base (metas, fuentes, pie)
+  styles/global.css        # estilos globales (tipografía, portada, resumen)
   pages/index.astro        # portada con la lista de resúmenes
   pages/resumen/[...id]    # página de cada resumen semanal
 ```
