@@ -23,7 +23,7 @@ const formatoFecha = new Intl.DateTimeFormat('es-ES', {
   <p class="volver"><a href="/">&larr; Todos los resúmenes</a></p>
   <article>
     <header class="cabecera">
-      <p class="semana">Semana del {r.data.semana}</p>
+      <p class="semana">{r.data.semana}</p>
       <h1>{r.data.titulo}</h1>
       <p class="fecha">{formatoFecha.format(r.data.fecha)}</p>
     </header>

@@ -31,7 +31,7 @@ const ultimaFecha = resumenes[0] ? formatoFecha.format(resumenes[0].data.fecha) 
         <a href={`/resumen/${r.id}/`}>
           <span class="num">{String(total - i).padStart(2, '0')}</span>
           <span>
-            <span class="meta">{formatoFecha.format(r.data.fecha)} · Semana del {r.data.semana}</span>
+            <span class="meta">{formatoFecha.format(r.data.fecha)} · {r.data.semana}</span>
             <span class="titulo">{r.data.titulo}</span>
             <span class="leer">Leer el resumen &rarr;</span>
           </span>

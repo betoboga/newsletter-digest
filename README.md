@@ -31,7 +31,7 @@ src/
    ---
    titulo: "Título de la semana"
    fecha: 2026-09-13
-   semana: "7 al 13 de septiembre de 2026"
+   semana: "Semana del 7 al 13 de septiembre de 2026"
    ---
    ```
 
