@@ -20,7 +20,7 @@ const formatoFecha = new Intl.DateTimeFormat('es-ES', {
 });
 ---
 <Base titulo={r.data.titulo}>
-  <p class="volver"><a href="/">&larr; Todos los resúmenes</a></p>
+  <p class="volver"><a href={import.meta.env.BASE_URL}>&larr; Todos los resúmenes</a></p>
   <article>
     <header class="cabecera">
       <p class="semana">{r.data.semana}</p>
