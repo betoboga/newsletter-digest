@@ -51,6 +51,4 @@ npm run preview  # sirve el build localmente
 
 El sitio es 100% estático (`dist/`), así que vale cualquier hosting de estáticos (Netlify, Vercel, Cloudflare Pages, GitHub Pages...).
 
-Para GitHub Pages: en **Settings > Pages** elegir "GitHub Actions" como fuente y usar el workflow oficial de Astro ([docs](https://docs.astro.build/en/guides/deploy/github/)). Si el repo no vive en la raíz del dominio, hay que ajustar `site` y `base` en `astro.config.mjs`.
-
-(No está configurado a propósito: se activará cuando toque.)
+Publicado con GitHub Pages en **https://betoboga.github.io/newsletter-digest/**. El despliegue es automático: el workflow `.github/workflows/deploy.yml` (acción oficial de Astro) construye y publica cada push a `main`. `astro.config.mjs` lleva `site` y `base` ajustados al subdirectorio del repo.
